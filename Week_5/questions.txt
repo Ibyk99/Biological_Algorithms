@@ -1,0 +1,27 @@
+To carry out a motif analysis you will take each DNA fragment (which are sequenced without errors
+and composed of just AGCT bases) and scan along the sequence (use a scanning window) to convert
+each sequence to a set of oligonucleotides (k-mers) 8bp in length.
+
+• How many 8bp oligonucleotides can be identified in each 200bp purified fragment?
+N - kmer size +1
+200 - 8 + 1 = 193
+
+• If you compare two 200b sequences and compare all oligonucleotides from one sequence to
+the other, how many oligonucleotide comparisons need to be made?
+193*193 = 37249
+
+• If you compare 100, 200bp sequences to each other how many oligonucleotide comparisons
+need to be made?
+193 oligonucleotides 
+100 seqs 
+
+(193*193)*100*100 = 372,490,000
+
+
+• If you compare 100, 200bp fragment sequences from the ChIP-seq data to the 100, 200bp
+sequences from the control data, how many comparisons need to be made?
+10,000 comparisons
+
+• How will this performance scale is you have more sequences, and what is the likely Order-Of
+performance of this simple approach???
+O(N^2)
