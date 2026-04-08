@@ -21,13 +21,16 @@ import scipy.stats as ss
 
 ps.read()
 
-def build_fit():
+def build_fit(data=None):
     print("**************************************************************************")
     print("*               Fit Gumbel Distribution from Simulation Data             *")
     print("**************************************************************************")
 
+    if data is None:
+        data = ps.settings["BUILD_EXPECT"]["random_file"]
 
-    data = pd.read_csv(ps.settings["BUILD_EXPECT"]["random_file"])
+    data = pd.read_csv(data)
+
     values = data.iloc[:, 0]
     sns.histplot(values, kde=True, stat='density')
     #plt.show()
@@ -132,5 +135,6 @@ def test():
     print("Expect (low) 5dp", get_expect_s(40, k, scale,precision= 5))
 
 #run the code
-#build_fit()
+if __name__ == "__main__":
+    build_fit()
 #test()

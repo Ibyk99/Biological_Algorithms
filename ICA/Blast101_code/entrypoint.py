@@ -1,10 +1,10 @@
-import programme_settings as ps
 import argparse
 import os
 from Bio import SeqIO
 import re
 import blast_101_search
 import smith_waterman_search
+import calc_bit_and_evalues
 
 # Function to validate if input file exists and if it contains fasta format sequences
 # File checking functionality adapted from - https://stackoverflow.com/questions/11540854/file-as-command-line-argument-for-argparse-error-message-if-argument-is-not-va
@@ -58,7 +58,7 @@ def instantiate_parser():
     parser.add_argument(
         '-q', '--query',
         required=False,
-        metavar='NUCLEOTIDE STRING',
+        metavar='STRING',
         type=lambda x: validate_sequence(parser, x),
         help="Protein Sequence to Query"
     )
@@ -69,10 +69,27 @@ def instantiate_parser():
             required=False,
             metavar='FILE',
             type=lambda x: file_exists(parser, x),
-            help='Input FASTA file containing query sequence(s)'
+            help='Input FASTA file containing query sequence(s), for stats programme a CSV containing simulation data'
         )
 
     return(parser)
+
+print("""
+##########################################################################################
+#                                                                                        #
+#                                 Blast 101                                              #
+#                                                                                        #
+##########################################################################################
+
+Modes:
+    - blast101          Run BLAST 101 search, a custom implementation of the SW algorith. Flags: -q <sequence> -i <database>
+    - smith_waterman    Run a search with the full Smith-Waterman algorithm. Flags: -q <sequence> -i <database>
+    - stats             Calculate statistics from a CSV file. Flags -i <csvfile>
+    - test              Run test mode
+      
+Example:
+    python3 entrypoint.py blast101 -q SOMEPROTEINSEQUENCE -i sequences.fasta")
+""")
 
 
 parser = instantiate_parser()
@@ -93,5 +110,9 @@ if args.mode == 'blast101' or args.mode == 'smith_waterman':
         smith_waterman_search.run_sw(args.query, args.input)
 
 
+if args.mode == 'stats':
+    if not args.input:
+        args.input = file_exists(parser, input("Please enter the name of the CSV file containing your data: ").strip())
+    calc_bit_and_evalues.build_fit(args.input)
 
-# print(args)
+

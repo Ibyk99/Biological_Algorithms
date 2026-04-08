@@ -1,8 +1,3 @@
-print("**********************************************************************************")
-print("*                                                                                *")
-print("*                     Blast 101 Search Basic Blast Programme                     *")
-print("*                                   Beta version!                                *")
-print("**********************************************************************************")
 # Simon Tomlinson Bioinformatics Algorithms 2025
 #  You need to install the required packages eg blosum
 
@@ -295,6 +290,12 @@ def print_final_results(res):
     print("~~~~~~~~~Finished~~~~~~~~~")
 
 def blast101_run(qseq=None, db=None):
+    print("**********************************************************************************")
+    print("*                                                                                *")
+    print("*                     Blast 101 Search Basic Blast Programme                     *")
+    print("*                                   Beta version!                                *")
+    print("**********************************************************************************")
+
     global query_sequence, qsequence
     qsequence = qseq
 
