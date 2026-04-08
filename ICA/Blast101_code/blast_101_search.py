@@ -26,15 +26,6 @@ ddist = bl.BLOSUM(int(programme_settings.settings["BLAST"]["blosum"]))
 
 max_extension_length =int(programme_settings.settings["BLAST"]["max_extension_length"])
 
-qsequence = programme_settings.settings["DEFAULT"]["query_sequence"]
-qsequence =qsequence.upper()
-
-#this can now become a BLAST object that ranks the seqs based upon a simple score
-#SW alignment only needs to be performed at the end
-#UP TO Here
-
-query_sequence = tdict.create_word_dict(qsequence)
-
 aligntime = 0
 max_scores = int(programme_settings.settings["BLAST"]["max_scores"])
 max_alignments = int(programme_settings.settings["BLAST"]["max_alignments"])
@@ -208,16 +199,16 @@ def process_blast(myline_database):
                         bestscore = currentscore
 
 
-
     t4 = time.time()
     aligntime =aligntime +(t4-t3)
     return bestscore
 
 #process the file
-def process_fasta_file():
+def process_fasta_file(db=None):
     global aligner_timer_secs
-
-    res = pff.process_fasta_file(programme_settings.settings["DEFAULT"]["database"], process_blast, max_scores,aligner_timer_secs)
+    if db is None:
+        db = programme_settings.settings["DEFAULT"]["database"]
+    res = pff.process_fasta_file(db, process_blast, max_scores,aligner_timer_secs)
 
 
     #change the order to print the best result first!
@@ -303,12 +294,24 @@ def print_final_results(res):
 
     print("~~~~~~~~~Finished~~~~~~~~~")
 
-def blast101_run():
+def blast101_run(qseq=None, db=None):
+    global query_sequence, qsequence
+    qsequence = qseq
+
+    # Initialize qsequence if not already set
+    if qsequence is None:
+        qsequence = programme_settings.settings["DEFAULT"]["query_sequence"]
+
+    qsequence = qsequence.upper()
+
+    # Create word dictionary from query sequence
+    query_sequence = tdict.create_word_dict(qsequence)
+
     init_print_timer()
 
     t1 = time.time()
     #process the FASTA files
-    res =process_fasta_file()
+    res =process_fasta_file(db)
 
     t2 = time.time()
     aligner_timer_secs["Elapsedtime"] += t2-t1
@@ -339,4 +342,5 @@ def init_print_timer():
     aligner_timer_secs["Elapsedtime"] = 0
 
 
-blast101_run()
+if __name__ == "__main__":
+    blast101_run()

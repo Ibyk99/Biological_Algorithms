@@ -1,0 +1,17 @@
+Name	SWScore	Exscore	BitScore	Expect	SeqIndex
+"sp|Q80Z64|NANOG_MOUSE Homeobox protein NANOG OS=Mus musculus OX=10090 GN=Nanog PE=1 SV=1"	320.0	320.0	nan	0.00000E+00	15
+"sp|A1YG92|NANG2_PANPA Putative homeobox protein NANOG2 OS=Pan paniscus OX=9597 GN=NANOGP1 PE=5 SV=1"	103.0	81.0	53	7.55209E-06	13
+"sp|Q8N7R0|NANG2_HUMAN Putative homeobox protein NANOG2 OS=Homo sapiens OX=9606 GN=NANOGP1 PE=5 SV=1"	94.0	78.0	51	3.16795E-05	12
+"sp|Q4JM65|NANOG_BOVIN Homeobox protein NANOG OS=Bos taurus OX=9913 GN=NANOG PE=2 SV=1"	93.0	73.0	51	3.71508E-05	14
+"sp|Q4WVV6|MDM10_ASPFU Mitochondrial distribution and morphology protein 10 OS=Aspergillus fumigatus (strain ATCC MYA-4609 / CBS 101355 / FGSC A1100 / Af293) OX=330879 GN=mdmB PE=3 SV=1"	60.0	60.0	43	0.00708	11
+"sp|O46491|CP7A1_PIG Cytochrome P450 7A1 OS=Sus scrofa OX=9823 GN=CYP7A1 PE=3 SV=1"	60.0	16.0	43	0.00708	9
+"sp|B0Y240|MDM10_ASPFC Mitochondrial distribution and morphology protein 10 OS=Aspergillus fumigatus (strain CBS 144.89 / FGSC A1163 / CEA10) OX=451804 GN=mdmB PE=3 SV=1"	59.0	59.0	43	0.00830	10
+"sp|P22680|CP7A1_HUMAN Cytochrome P450 7A1 OS=Homo sapiens OX=9606 GN=CYP7A1 PE=1 SV=2"	58.0	16.0	43	0.00971	8
+"sp|Q50LG3|AFT91_ALTAL Highly reducing polyketide synthase AFT9-1 OS=Alternaria alternata OX=5599 GN=AFT9-1 PE=3 SV=1"	57.0	41.0	43	0.01137	7
+"sp|B2GEY3|ADDB_LIMF3 ATP-dependent helicase/deoxyribonuclease subunit B OS=Limosilactobacillus fermentum (strain NBRC 3956 / LMG 18251) OX=334390 GN=rexB PE=3 SV=1"	53.0	23.0	42	0.02129	6
+"sp|Q09406|A16L2_CAEEL Autophagic-related protein 16.2 OS=Caenorhabditis elegans OX=6239 GN=atg-16.2 PE=1 SV=2"	49.0	29.0	41	0.03952	5
+"sp|P0C9T4|5054R_ASFP4 Protein MGF 505-4R OS=African swine fever virus (isolate Tick/South Africa/Pretoriuskop Pr4/1996) OX=561443 GN=Pret-040 PE=3 SV=1"	48.0	45.0	41	0.04602	4
+"sp|Q25538|1433_NEOCA 14-3-3 protein homolog OS=Neospora caninum OX=29176 PE=2 SV=1"	45.0	43.0	40	0.07215	3
+"sp|Q197D5|025R_IIV3 Uncharacterized protein 025R OS=Invertebrate iridescent virus 3 OX=345201 GN=IIV3-025R PE=3 SV=1"	36.0	25.0	38	0.24313	2
+"sp|Q6GZV4|021L_FRG3G Uncharacterized protein 021L OS=Frog virus 3 (isolate Goorha) OX=654924 GN=FV3-021L PE=4 SV=1"	29.0	19.0	37	0.46774	1
+"sp|Q6GZX4|001R_FRG3G Putative transcription factor 001R OS=Frog virus 3 (isolate Goorha) OX=654924 GN=FV3-001R PE=4 SV=1"	27.0	18.0	37	0.52565	0

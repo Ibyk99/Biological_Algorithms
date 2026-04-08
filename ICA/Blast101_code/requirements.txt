@@ -1,0 +1,8 @@
+# BLAST101 Project Requirements
+blosum
+biopython
+numpy
+scipy
+pandas
+matplotlib
+seaborn

@@ -7,14 +7,14 @@ import configparser
 
 settings = configparser.ConfigParser(allow_no_value=True)
 
-def read():
+def read(file="settings.ini"):
     global settings
-    with open("settings.ini") as fh:
+    with open(file) as fh:
         settings.read_file(fh)
 
 
-def write():
+def write(file="settings.ini"):
     global settings
 
-    with open("settings.ini", 'w') as configfile:
+    with open(file, 'w') as configfile:
         settings.write(configfile)
